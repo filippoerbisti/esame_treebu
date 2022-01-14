@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center p-4 bg-green-700 w-screen">
-    <div @click="goToList()" class="cursor-pointer text-xl">
+    <div @click="goToHome()" class="cursor-pointer text-xl">
       <span class="text-white italic"> BANCA DELLA </span>
       <span class="text-red-900 font-bold text-green-200 italic"> TERRA </span>
     </div>

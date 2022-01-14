@@ -21,7 +21,10 @@ class CreateLandsTable extends Migration
             $table->text('cadastral_sheet')->nullable();
             $table->text('cadastral_map')->nullable();
             $table->text('cadastral_parcel')->nullable();
-            $table->text('offer_fee')->nullable();
+            $table->text('land_type')->nullable();
+            $table->text('irrigation_type')->nullable();
+            $table->text('offer_type')->nullable();
+            $table->float('offer_fee')->nullable();
             $table->boolean('availability')->nullable();
             $table->timestamps();
         });

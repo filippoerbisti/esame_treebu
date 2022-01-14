@@ -13,10 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            IrrigationTypeSeeder::class,
-            LandTypeSeeder::class,
-            OfferTypeSeeder::class,
-        ]);
+        //
     }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full w-screen-md mx-auto pt-8 px-16 pt-24 mb-8">
+  <div class="w-full w-screen-md mx-auto">
     <h1 class="text-center text-3xl font-bold">Benvenuto!</h1>
     <p class="text-center text-lg py-2 pb-2">
       Ricerca in <span class="text-bold">BANCA DELLA TERRA</span> il tuo pezzo
@@ -44,7 +44,8 @@
             </div>
           </div>
           <img class="w-auto h-56" :src="land.img" alt="img_land" />
-          <div class="mt-2 ml-auto space-x-3 flex justify-end">
+        </div>
+        <div class="mt-2 ml-auto space-x-3 flex justify-end">
             <button
               class="text-green-600 text-sm font-bold"
               @click="edit(land)"
@@ -58,7 +59,6 @@
               Elimina
             </button>
           </div>
-        </div>
       </div>
     </div>
   </div>
@@ -92,7 +92,7 @@ export default {
     async deleteLand(land) {
       if (
         confirm(
-          "Vuoi davvero eliminare la land: " + land.name + "?",
+          "Vuole davvero eliminare il terreno a: " + land.municipality + "?",
           "Si",
           "No"
         )

@@ -1,16 +1,16 @@
 <template>
-    <div class="w-full max-w-screen-md mx-auto py-8 px-3">
+    <div class="w-full max-w-screen-md mx-auto">
     <div class="flex items-end">
-      <h1 class="font-bold text-3xl">{{ land.municipality }}</h1>
+      <h1 class="font-bold text-3xl">Terreno a: <span class="text-bold">{{ land.municipality }}</span></h1>
       <h2 class="ml-auto text-green-600 font-bold text-2xl">
         {{ land.dimension }} m<sup>2</sup>
       </h2>
     </div>
-    <div class="flex mt-5 items-stretch">
-      <div class="h-56 w-56 w-full bg-white cursor-pointer mr-8">
+    <div class="flex flex-col mt-5">
+      <div class="h-56 w-auto bg-white cursor-pointer flex mx-auto">
         <img class="w-full h-full" :src="land.img" alt="land_img" />
       </div>
-      <div class="flex flex-col justify-between flex-grow">
+      <div class="grid grid-cols-2 gap-8 justify-between flex-grow pt-4">
         <div
           v-for="field in fields"
           :key="field.code"
@@ -28,7 +28,7 @@
     <div>
       <button
         @click="goToList()"
-        class="text-gray-500 text-sm cursor-pointer mt-5"
+        class="rounded-lg p-2 uppercase text-xs cursor-pointer mt-5 bg-gray-300 text-gray-800"
       >
         Torna indietro
       </button>
@@ -81,22 +81,18 @@ export default {
             {
               label: "Argilloso",
               code: "argilloso",
-              id: 1
             },
             {
               label: "Sabbioso",
               code: "sabbioso",
-              id: 2
             },
             {
               label: "Ghiaioso",
               code: "ghiaioso",
-              id: 3
             },
             {
               label: "Tufo",
               code: "tufo",
-              id: 4
             },
           ],
         },
@@ -108,22 +104,18 @@ export default {
             {
               label: "A scorrimento",
               code: "a_scorrimento",
-              id: 1
             },
             {
               label: "Pozzo",
               code: "pozzo",
-              id: 2
             },
             {
               label: "Canale",
               code: "canale",
-              id: 3
             },
             {
               label: "Senz'acqua",
               code: "senz_acqua",
-              id: 4
             },
           ],
         },
@@ -135,20 +127,27 @@ export default {
             {
               label: "Vendita",
               code: "vendita",
-              id: 1
             },
             {
               label: "Affitto",
               code: "affitto",
-              id: 2
             },
             {
               label: "Affitto gratuito",
               code: "affitto_gratuito",
-              id: 3
             }
           ],
         },
+        {
+          label: "Canone offerta",
+          code: "offer_fee",
+          type: "number",
+        },
+        {
+          label: "Disponibile da subito",
+          code: "availability",
+          type: "checkbox",
+        }
       ],
     };
   },
